@@ -12,6 +12,8 @@
 		0A7759201DB29584000E411E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A77591E1DB29584000E411E /* Main.storyboard */; };
 		0A7759221DB29584000E411E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7759211DB29584000E411E /* Assets.xcassets */; };
 		0A7759251DB29584000E411E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7759231DB29584000E411E /* LaunchScreen.storyboard */; };
+		0A77592E1DB29BC6000E411E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A77592D1DB29BC6000E411E /* libz.dylib */; };
+		0A7759361DB2A30B000E411E /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7759351DB2A30B000E411E /* Gimbal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		0A7759211DB29584000E411E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7759241DB29584000E411E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A7759261DB29584000E411E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A77592D1DB29BC6000E411E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0A7759351DB2A30B000E411E /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = WalletFinder/Frameworks/Gimbal.framework; sourceTree = "<group>"; };
+		0A7759371DB2A759000E411E /* WalletFinder-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WalletFinder-Bridging-Header.h"; path = "WalletFinder/Headers/WalletFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7759361DB2A30B000E411E /* Gimbal.framework in Frameworks */,
+				0A77592E1DB29BC6000E411E /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +45,10 @@
 		0A77590E1DB29584000E411E = {
 			isa = PBXGroup;
 			children = (
+				0A7759381DB2A77B000E411E /* Headers */,
 				0A7759191DB29584000E411E /* WalletFinder */,
 				0A7759181DB29584000E411E /* Products */,
+				0A77592C1DB29BC6000E411E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +71,23 @@
 				0A7759261DB29584000E411E /* Info.plist */,
 			);
 			path = WalletFinder;
+			sourceTree = "<group>";
+		};
+		0A77592C1DB29BC6000E411E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A7759351DB2A30B000E411E /* Gimbal.framework */,
+				0A77592D1DB29BC6000E411E /* libz.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A7759381DB2A77B000E411E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				0A7759371DB2A759000E411E /* WalletFinder-Bridging-Header.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,11 +286,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WalletFinder/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/WalletFinder/Frameworks/Gimbal.framework/Headers";
 				INFOPLIST_FILE = WalletFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.xihan94.WalletFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WalletFinder/Headers/WalletFinder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -272,11 +305,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WalletFinder/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/WalletFinder/Frameworks/Gimbal.framework/Headers";
 				INFOPLIST_FILE = WalletFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.xihan94.WalletFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WalletFinder/Headers/WalletFinder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -299,6 +339,7 @@
 				0A77592B1DB29584000E411E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		// Initialize Gimbal framework.
+		Gimbal.setAPIKey("1ce025fb-6823-43a3-9fb1-a5fdc476518e", options: nil)
+		Gimbal.start()
+		
+		print(GMBLPlaceManager.isMonitoring())
 		return true
 	}
 
