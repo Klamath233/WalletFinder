@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Gimbal.start()
 		
 		print(GMBLPlaceManager.isMonitoring())
+		
+		let notificationCenter = UNUserNotificationCenter.current()
+		notificationCenter.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+			
+			// Crash if not granted for now.
+			// TODO: add graceful messages.
+			if (!granted) {
+				exit(1)
+			}
+		}
+		
 		return true
 	}
 
