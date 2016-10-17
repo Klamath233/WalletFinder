@@ -4,6 +4,7 @@
 <dict>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>bluetooth-central</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>

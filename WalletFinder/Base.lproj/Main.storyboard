@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="16B2652" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,13 +15,56 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUX-Yj-TT7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o4-5l-zCp">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="SGM-g4-Xn6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="i8I-4X-10p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TJ5-TE-0g3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOn-K7-npG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TJ5-TE-0g3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5xc-dY-Dz6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6o4-5l-zCp" secondAttribute="bottom" constant="32" id="9kh-2O-eKl"/>
+                            <constraint firstItem="TJ5-TE-0g3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9n8-DB-zM6"/>
+                            <constraint firstItem="EOn-K7-npG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GZY-ft-aKy"/>
+                            <constraint firstItem="gUX-Yj-TT7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IRV-Ca-Oya"/>
+                            <constraint firstItem="gUX-Yj-TT7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="MBH-J8-oYO"/>
+                            <constraint firstItem="EOn-K7-npG" firstAttribute="top" secondItem="TJ5-TE-0g3" secondAttribute="bottom" constant="16" id="Mnq-Yz-IFp"/>
+                            <constraint firstItem="6o4-5l-zCp" firstAttribute="top" secondItem="EOn-K7-npG" secondAttribute="bottom" constant="8" id="dOK-eh-vOl"/>
+                            <constraint firstItem="TJ5-TE-0g3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="gee-Ui-or4"/>
+                            <constraint firstAttribute="trailing" secondItem="TJ5-TE-0g3" secondAttribute="trailing" constant="32" id="ikD-ZU-RZm"/>
+                            <constraint firstItem="TJ5-TE-0g3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k2B-IN-wE4"/>
+                            <constraint firstItem="TJ5-TE-0g3" firstAttribute="top" secondItem="gUX-Yj-TT7" secondAttribute="bottom" constant="16" id="uNJ-Qk-OCc"/>
+                            <constraint firstItem="6o4-5l-zCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yVG-Ht-Ig5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="TJ5-TE-0g3" id="lQV-bG-Zdl"/>
+                        <outlet property="signalDateLabel" destination="6o4-5l-zCp" id="wRc-Xy-9KR"/>
+                        <outlet property="signalLabel" destination="EOn-K7-npG" id="u3Y-IA-ObK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2" y="34"/>
         </scene>
     </scenes>
 </document>
